@@ -142,6 +142,7 @@ class RequestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         when (item.itemId) {
             R.id.nav_phone -> {
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
             R.id.nav_payment -> {
 
@@ -173,11 +174,11 @@ class RequestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         if (user == null) {
             menu.getItem(5).setVisible(false)
             menu.getItem(0).setVisible(true)
-            current_phone_number.visibility = View.GONE
+            header.findViewById<View>(R.id.current_phone_number).visibility = View.GONE
         } else {
             menu.getItem(0).setVisible(false)
             menu.getItem(5).setVisible(true)
-            current_phone_number.visibility = View.VISIBLE
+            header.findViewById<View>(R.id.current_phone_number).visibility = View.VISIBLE
         }
 
     }
